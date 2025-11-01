@@ -1,5 +1,10 @@
 # Mayton Lyceum School District Website
 
+[![GitHub Pages](https://img.shields.io/github/deployments/legertom/maytonlyceum/github-pages?label=pages&logo=github)](https://github.com/legertom/maytonlyceum/deployments/activity_log?environment=github-pages)
+
+Live site: https://maytonlyceum.com  
+Fallback (GitHub Pages): https://legertom.github.io/maytonlyceum/
+
 A comprehensive, modern school district website featuring school listings, staff directory, policy pages, and district information.
 
 ## Project Overview
