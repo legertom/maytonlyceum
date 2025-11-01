@@ -30,11 +30,8 @@ TARGETS = {
     "assets/images/schools/high-school.jpg": "Public high school campus exterior with flagpole and landscaping, daylight, realistic documentary style",
 }
 
-# Prefer wide aspect for hero/exteriors if the model supports it; fall back to square
-SIZE_WIDE = "1792x1024"
-SIZE_SQUARE = "1024x1024"
-
-WIDE_KEYS = {k for k in TARGETS if any(x in k for x in ["hero.jpg", "high-school.jpg", "junior-high.jpg", "elementary.jpg"]) }
+# Use a widely-supported size to avoid 400s from unsupported dimensions
+SIZE_DEFAULT = "1024x1024"
 
 
 def request_image(prompt: str, size: str) -> bytes:
@@ -42,12 +39,15 @@ def request_image(prompt: str, size: str) -> bytes:
         "model": "gpt-image-1",
         "prompt": prompt,
         "size": size,
-        "n": 1,
-        "response_format": "b64_json",
+        "n": 1
     }).encode("utf-8")
     req = urllib.request.Request(ENDPOINT, data=payload, headers=HEADERS, method="POST")
-    with urllib.request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="ignore")
+        raise RuntimeError(f"HTTP {e.code}: {body}")
     b64 = data["data"][0]["b64_json"]
     return base64.b64decode(b64)
 
@@ -78,9 +78,9 @@ def main():
     root = pathlib.Path(__file__).resolve().parents[1]
     for rel, prompt in TARGETS.items():
         out_path = root / rel
-        size = SIZE_WIDE if rel in WIDE_KEYS else SIZE_SQUARE
         try:
-            png_bytes = request_image(prompt, size)
+            # Always use default supported size; if it fails, report full error
+            png_bytes = request_image(prompt, SIZE_DEFAULT)
             # Try to write as jpg; if conversion fails, save PNG next to it
             if save_as_jpg(png_bytes, out_path):
                 print(f"Saved JPG: {rel}")
