@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mayton Lyceum School District Staff Directory - Search and contact our administrators, teachers, and support staff.">
+  <title>Staff Directory - Mayton Lyceum School District</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/directory.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-message">Welcome to Mayton Lyceum School District</div>
+        <div class="header-contact">
+          <a href="tel:7076843100">📞 (707) 684-3100</a>
+          <a href="../contact.html">✉️ Contact Us</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="header-main">
+      <div class="container">
+        <a href="../index.html" class="site-logo">
+          <img src="../assets/images/logo.png" alt="Mayton Lyceum Logo">
+          <div>
+            <div class="site-title">Mayton Lyceum</div>
+            <div class="site-tagline">Excellence in Education</div>
+          </div>
+        </a>
+        
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
+        
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../schools/index.html">Schools</a></li>
+            <li><a href="directory.html" class="active">Staff Directory</a></li>
+            <li><a href="../policies/index.html">Policies</a></li>
+            <li><a href="../calendar.html">Calendar</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li>Staff Directory</li>
+      </ul>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h1>Staff Directory</h1>
+          <p class="subtitle">Find contact information for our administrators, teachers, and support staff</p>
+        </div>
+
+        <!-- Search and Filter Controls -->
+        <div class="directory-controls">
+          <div class="directory-search">
+            <input type="text" id="staffSearch" class="search-input" placeholder="Search by name, position, or email..." aria-label="Search staff">
+          </div>
+          
+          <div class="directory-filters">
+            <select id="schoolFilter" class="filter-select" aria-label="Filter by school">
+              <option value="all">All Schools</option>
+              <option value="District Office">District Office</option>
+              <option value="Riverside Elementary">Riverside Elementary</option>
+              <option value="Central Junior High">Central Junior High</option>
+              <option value="Mayton High School">Mayton High School</option>
+              <option value="District-Wide">District-Wide</option>
+            </select>
+            
+            <select id="departmentFilter" class="filter-select" aria-label="Filter by department">
+              <option value="all">All Departments</option>
+              <option value="Administration">Administration</option>
+              <option value="Teaching">Teaching</option>
+              <option value="Support">Support</option>
+              <option value="Athletics">Athletics</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="directory-view-toggle">
+          <button class="view-btn active" data-view="grid">Grid View</button>
+          <button class="view-btn" data-view="table">Table View</button>
+        </div>
+
+        <!-- Results Info -->
+        <p id="resultsInfo" class="results-info">Loading staff directory...</p>
+
+        <!-- Grid View -->
+        <div id="staffGrid" class="staff-grid active">
+          <!-- Staff cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Table View -->
+        <div class="directory-table">
+          <table id="staffTable">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">Name</th>
+                <th class="sortable" data-sort="position">Position</th>
+                <th class="sortable" data-sort="school">School</th>
+                <th class="sortable" data-sort="email">Email</th>
+                <th class="sortable" data-sort="phone">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Mayton Lyceum School District</h4>
+          <p>100 Education Way<br>Mayton, CA 95401</p>
+          <p>Phone: (707) 684-3100<br>Fax: (707) 684-3199</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../schools/index.html">Our Schools</a></li>
+            <li><a href="../board.html">Board of Education</a></li>
+            <li><a href="../employment.html">Employment</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="directory.html">Staff Directory</a></li>
+            <li><a href="../policies/index.html">District Policies</a></li>
+            <li><a href="../calendar.html">Calendar</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect With Us</h4>
+          <p>Email: <a href="mailto:info@maytonlyceum.edu">info@maytonlyceum.edu</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mayton Lyceum School District. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded Staff Data -->
+  <script id="staffData" type="application/json">
+[
+  {"id":1,"name":"Dr. Robert Williams","position":"Superintendent","school":"District Office","department":"Administration","email":"r.williams@maytonlyceum.edu","phone":"7076843100","office":"District Office, Room 101","photo":"../assets/images/staff/williams.jpg"},
+  {"id":2,"name":"Patricia Henderson","position":"Assistant Superintendent","school":"District Office","department":"Administration","email":"p.henderson@maytonlyceum.edu","phone":"7076843101","office":"District Office, Room 102","photo":"../assets/images/staff/henderson.jpg"},
+  {"id":3,"name":"Dr. Jennifer Martinez","position":"Principal","school":"Riverside Elementary","department":"Administration","email":"j.martinez@maytonlyceum.edu","phone":"7076843200","office":"Main Office","photo":"../assets/images/staff/martinez.jpg"},
+  {"id":4,"name":"Michael Sanders","position":"Assistant Principal","school":"Riverside Elementary","department":"Administration","email":"m.sanders@maytonlyceum.edu","phone":"7076843201","office":"Main Office","photo":"../assets/images/staff/sanders.jpg"},
+  {"id":5,"name":"Lisa Thompson","position":"Kindergarten Teacher","school":"Riverside Elementary","department":"Teaching","email":"l.thompson@maytonlyceum.edu","phone":"7076843210","office":"Room 12","photo":"../assets/images/staff/thompson-l.jpg"},
+  {"id":6,"name":"James Rodriguez","position":"1st Grade Teacher","school":"Riverside Elementary","department":"Teaching","email":"j.rodriguez@maytonlyceum.edu","phone":"7076843211","office":"Room 15","photo":"../assets/images/staff/rodriguez.jpg"},
+  {"id":7,"name":"Emily Watson","position":"2nd Grade Teacher","school":"Riverside Elementary","department":"Teaching","email":"e.watson@maytonlyceum.edu","phone":"7076843212","office":"Room 18","photo":"../assets/images/staff/watson.jpg"},
+  {"id":8,"name":"David Kim","position":"3rd Grade Teacher","school":"Riverside Elementary","department":"Teaching","email":"d.kim@maytonlyceum.edu","phone":"7076843213","office":"Room 21","photo":"../assets/images/staff/kim.jpg"},
+  {"id":9,"name":"Rebecca Foster","position":"4th Grade Teacher","school":"Riverside Elementary","department":"Teaching","email":"r.foster@maytonlyceum.edu","phone":"7076843214","office":"Room 24","photo":"../assets/images/staff/foster.jpg"},
+  {"id":10,"name":"Thomas Anderson","position":"5th Grade Teacher","school":"Riverside Elementary","department":"Teaching","email":"t.anderson@maytonlyceum.edu","phone":"7076843215","office":"Room 27","photo":"../assets/images/staff/anderson.jpg"},
+  {"id":11,"name":"Maria Garcia","position":"School Counselor","school":"Riverside Elementary","department":"Support","email":"m.garcia@maytonlyceum.edu","phone":"7076843220","office":"Counseling Center","photo":"../assets/images/staff/garcia.jpg"},
+  {"id":12,"name":"Mr. David Chen","position":"Principal","school":"Central Junior High","department":"Administration","email":"d.chen@maytonlyceum.edu","phone":"7076843300","office":"Main Office","photo":"../assets/images/staff/chen.jpg"},
+  {"id":13,"name":"Katherine Miller","position":"Assistant Principal","school":"Central Junior High","department":"Administration","email":"k.miller@maytonlyceum.edu","phone":"7076843301","office":"Main Office","photo":"../assets/images/staff/miller.jpg"},
+  {"id":14,"name":"Robert Johnson","position":"6th Grade English Teacher","school":"Central Junior High","department":"Teaching","email":"r.johnson@maytonlyceum.edu","phone":"7076843310","office":"Room 105","photo":"../assets/images/staff/johnson.jpg"},
+  {"id":15,"name":"Sarah Mitchell","position":"7th Grade Math Teacher","school":"Central Junior High","department":"Teaching","email":"s.mitchell@maytonlyceum.edu","phone":"7076843311","office":"Room 201","photo":"../assets/images/staff/mitchell.jpg"},
+  {"id":16,"name":"Christopher Lee","position":"8th Grade Science Teacher","school":"Central Junior High","department":"Teaching","email":"c.lee@maytonlyceum.edu","phone":"7076843312","office":"Room 303","photo":"../assets/images/staff/lee.jpg"},
+  {"id":17,"name":"Amanda Phillips","position":"Social Studies Teacher","school":"Central Junior High","department":"Teaching","email":"a.phillips@maytonlyceum.edu","phone":"7076843313","office":"Room 108","photo":"../assets/images/staff/phillips.jpg"},
+  {"id":18,"name":"Brian Tucker","position":"PE Teacher","school":"Central Junior High","department":"Teaching","email":"b.tucker@maytonlyceum.edu","phone":"7076843320","office":"Gymnasium","photo":"../assets/images/staff/tucker.jpg"},
+  {"id":19,"name":"Nicole Carter","position":"School Counselor","school":"Central Junior High","department":"Support","email":"n.carter@maytonlyceum.edu","phone":"7076843325","office":"Counseling Center","photo":"../assets/images/staff/carter.jpg"},
+  {"id":20,"name":"Ms. Sarah Thompson","position":"Principal","school":"Mayton High School","department":"Administration","email":"s.thompson@maytonlyceum.edu","phone":"7076843400","office":"Main Office","photo":"../assets/images/staff/thompson-s.jpg"},
+  {"id":21,"name":"Gregory Barnes","position":"Assistant Principal","school":"Mayton High School","department":"Administration","email":"g.barnes@maytonlyceum.edu","phone":"7076843401","office":"Main Office","photo":"../assets/images/staff/barnes.jpg"},
+  {"id":22,"name":"Dr. Elizabeth Morgan","position":"English Department Head","school":"Mayton High School","department":"Teaching","email":"e.morgan@maytonlyceum.edu","phone":"7076843410","office":"Room A-12","photo":"../assets/images/staff/morgan.jpg"},
+  {"id":23,"name":"William Patterson","position":"Math Teacher","school":"Mayton High School","department":"Teaching","email":"w.patterson@maytonlyceum.edu","phone":"7076843411","office":"Room B-20","photo":"../assets/images/staff/patterson.jpg"},
+  {"id":24,"name":"Dr. Linda Cooper","position":"Science Department Head","school":"Mayton High School","department":"Teaching","email":"l.cooper@maytonlyceum.edu","phone":"7076843412","office":"Science Lab C-10","photo":"../assets/images/staff/cooper.jpg"},
+  {"id":25,"name":"Marcus Washington","position":"History Teacher","school":"Mayton High School","department":"Teaching","email":"m.washington@maytonlyceum.edu","phone":"7076843413","office":"Room A-25","photo":"../assets/images/staff/washington.jpg"},
+  {"id":26,"name":"Jennifer Brooks","position":"Spanish Teacher","school":"Mayton High School","department":"Teaching","email":"j.brooks@maytonlyceum.edu","phone":"7076843414","office":"Room D-05","photo":"../assets/images/staff/brooks.jpg"},
+  {"id":27,"name":"Daniel Rivera","position":"Art Teacher","school":"Mayton High School","department":"Teaching","email":"d.rivera@maytonlyceum.edu","phone":"7076843415","office":"Art Studio","photo":"../assets/images/staff/rivera.jpg"},
+  {"id":28,"name":"Michelle Adams","position":"Music Director","school":"Mayton High School","department":"Teaching","email":"m.adams@maytonlyceum.edu","phone":"7076843416","office":"Music Room","photo":"../assets/images/staff/adams.jpg"},
+  {"id":29,"name":"Kevin Hughes","position":"Athletic Director","school":"Mayton High School","department":"Athletics","email":"k.hughes@maytonlyceum.edu","phone":"7076843430","office":"Athletic Office","photo":"../assets/images/staff/hughes.jpg"},
+  {"id":30,"name":"Laura Bennett","position":"Varsity Soccer Coach","school":"Mayton High School","department":"Athletics","email":"l.bennett@maytonlyceum.edu","phone":"7076843431","office":"Athletic Office","photo":"../assets/images/staff/bennett.jpg"},
+  {"id":31,"name":"Steven Hayes","position":"School Counselor","school":"Mayton High School","department":"Support","email":"s.hayes@maytonlyceum.edu","phone":"7076843420","office":"Counseling Center 1","photo":"../assets/images/staff/hayes.jpg"},
+  {"id":32,"name":"Angela Powell","position":"School Counselor","school":"Mayton High School","department":"Support","email":"a.powell@maytonlyceum.edu","phone":"7076843421","office":"Counseling Center 2","photo":"../assets/images/staff/powell.jpg"},
+  {"id":33,"name":"Timothy Russell","position":"Librarian","school":"Mayton High School","department":"Support","email":"t.russell@maytonlyceum.edu","phone":"7076843425","office":"Library","photo":"../assets/images/staff/russell.jpg"},
+  {"id":34,"name":"Diana Coleman","position":"School Nurse","school":"District-Wide","department":"Support","email":"d.coleman@maytonlyceum.edu","phone":"7076843150","office":"Health Office","photo":"../assets/images/staff/coleman.jpg"},
+  {"id":35,"name":"Frank Morrison","position":"Director of Technology","school":"District Office","department":"Support","email":"f.morrison@maytonlyceum.edu","phone":"7076843105","office":"District Office, IT Dept","photo":"../assets/images/staff/morrison.jpg"}
+]
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/directory.js"></script>
+</body>
+</html>
